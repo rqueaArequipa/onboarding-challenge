@@ -1,18 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { useEffect, useState } from 'react';
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { StatusBar } from "expo-status-bar";
+import { useEffect, useState } from "react";
+import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { NavigationContainer } from "@react-navigation/native";
 
-import HomeScreen from './app/screens/HomeScreen';
-import Onboarding from './app/components/Onboarding/Onboarding';
+import Onboarding from "./app/components/Onboarding/Onboarding";
+import TabNavigation from "./app/navigations/TabNavigation";
 
 const Loading = () => {
   return (
     <View>
       <ActivityIndicator size="large" />
     </View>
-  )
-}
+  );
+};
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -20,26 +21,32 @@ export default function App() {
 
   const checkOnboarding = async () => {
     try {
-      const value = await AsyncStorage.getItem('@viewedOnboarding')
+      const value = await AsyncStorage.getItem("@viewedOnboarding");
       if (value != null) {
-        setViewedOnboarding(true)
+        setViewedOnboarding(true);
       }
     } catch (error) {
-      console.log('Error @checkOnboarding', error)
+      console.log("Error @checkOnboarding", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
-    checkOnboarding()
-  }, [])
+    checkOnboarding();
+  }, []);
 
   return (
     <View style={styles.container}>
-      {
-        loading ? <Loading /> : viewedOnboarding ? <HomeScreen /> : <Onboarding />
-      }
+      {loading ? (
+        <Loading />
+      ) : viewedOnboarding ? (
+        <NavigationContainer >
+          <TabNavigation />
+        </NavigationContainer>
+      ) : (
+        <Onboarding />
+      )}
       <StatusBar style="auto" />
     </View>
   );
@@ -48,8 +55,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
   },
 });

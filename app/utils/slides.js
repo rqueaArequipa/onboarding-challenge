@@ -1,26 +1,90 @@
 export default [
-    {
-        id: '1',
-        title: 'Discover!',
-        description: 'Find amazing spots effortlessly, and be sure that every moment of your free time becomes truly unforgettable.',
-        image: require('../assets/images/img-1.png')
-    },
-    {
-        id: '2',
-        title: 'Discover!',
-        description: 'Find amazing spots effortlessly, and be sure that every moment of your free time becomes truly unforgettable.',
-        image: require('../assets/images/img-1.png')
-    },
-    {
-        id: '3',
-        title: 'Discover!',
-        description: 'Find amazing spots effortlessly, and be sure that every moment of your free time becomes truly unforgettable.',
-        image: require('../assets/images/img-1.png')
-    },
-    {
-        id: '4',
-        title: 'Discover!',
-        description: 'Find amazing spots effortlessly, and be sure that every moment of your free time becomes truly unforgettable.',
-        image: require('../assets/images/img-1.png')
-    },
+  {
+    id: "1",
+    title: "Discover 1!",
+    description:
+      "Find amazing spots effortlessly, and be sure that every moment of your free time becomes truly unforgettable.",
+    images: [
+      { id: "1", image: require("../assets/images/image1.jpg") },
+      { id: "2", image: require("../assets/images/image2.jpg") },
+      { id: "3", image: require("../assets/images/image3.jpg") },
+      { id: "4", image: require("../assets/images/image4.jpg") },
+      { id: "5", image: require("../assets/images/image5.jpg") },
+      { id: "6", image: require("../assets/images/image6.jpg") },
+      { id: "7", image: require("../assets/images/image7.jpg") },
+      { id: "8", image: require("../assets/images/image8.jpg") },
+      { id: "9", image: require("../assets/images/image9.jpg") },
+      { id: "10", image: require("../assets/images/image10.jpg") },
+      { id: "11", image: require("../assets/images/image11.jpg") },
+      { id: "12", image: require("../assets/images/image12.jpg") },
+      { id: "13", image: require("../assets/images/image13.jpg") },
+      { id: "14", image: require("../assets/images/image14.jpg") },
+    ],
+  },
+  {
+    id: "2",
+    title: "Discover 2!",
+    description:
+      "Find amazing spots effortlessly, and be sure that every moment of your free time becomes truly unforgettable.",
+    images: [
+      { id: "15", image: require("../assets/images/image21.jpg") },
+      { id: "16", image: require("../assets/images/image21.jpg") },
+      { id: "17", image: require("../assets/images/image23.jpg") },
+      { id: "18", image: require("../assets/images/image24.jpg") },
+      { id: "19", image: require("../assets/images/image25.jpg") },
+      { id: "20", image: require("../assets/images/image26.jpg") },
+      { id: "21", image: require("../assets/images/image27.jpg") },
+      { id: "22", image: require("../assets/images/image14.jpg") },
+      { id: "23", image: require("../assets/images/image15.jpg") },
+      { id: "24", image: require("../assets/images/image16.jpg") },
+      { id: "25", image: require("../assets/images/image17.jpg") },
+      { id: "26", image: require("../assets/images/image18.jpg") },
+      { id: "27", image: require("../assets/images/image19.jpg") },
+      { id: "28", image: require("../assets/images/image20.jpg") },
+    ],
+  },
+  {
+    id: "3",
+    title: "Discover 3!",
+    description:
+      "Find amazing spots effortlessly, and be sure that every moment of your free time becomes truly unforgettable.",
+    images: [
+      { id: "29", image: require("../assets/images/image7.jpg") },
+      { id: "30", image: require("../assets/images/image8.jpg") },
+      { id: "31", image: require("../assets/images/image9.jpg") },
+      { id: "32", image: require("../assets/images/image10.jpg") },
+      { id: "33", image: require("../assets/images/image11.jpg") },
+      { id: "34", image: require("../assets/images/image12.jpg") },
+      { id: "35", image: require("../assets/images/image13.jpg") },
+      { id: "36", image: require("../assets/images/image14.jpg") },
+      { id: "37", image: require("../assets/images/image15.jpg") },
+      { id: "38", image: require("../assets/images/image16.jpg") },
+      { id: "39", image: require("../assets/images/image17.jpg") },
+      { id: "49", image: require("../assets/images/image18.jpg") },
+      { id: "41", image: require("../assets/images/image19.jpg") },
+      { id: "42", image: require("../assets/images/image20.jpg") },
+    ],
+  },
+  {
+    id: "4",
+    title: "Discover 4!",
+    description:
+      "Find amazing spots effortlessly, and be sure that every moment of your free time becomes truly unforgettable.",
+    images: [
+      { id: "43", image: require("../assets/images/image14.jpg") },
+      { id: "44", image: require("../assets/images/image15.jpg") },
+      { id: "45", image: require("../assets/images/image16.jpg") },
+      { id: "46", image: require("../assets/images/image17.jpg") },
+      { id: "47", image: require("../assets/images/image18.jpg") },
+      { id: "48", image: require("../assets/images/image19.jpg") },
+      { id: "49", image: require("../assets/images/image20.jpg") },
+      { id: "50", image: require("../assets/images/image21.jpg") },
+      { id: "51", image: require("../assets/images/image22.jpg") },
+      { id: "52", image: require("../assets/images/image23.jpg") },
+      { id: "53", image: require("../assets/images/image24.jpg") },
+      { id: "54", image: require("../assets/images/image25.jpg") },
+      { id: "55", image: require("../assets/images/image26.jpg") },
+      { id: "56", image: require("../assets/images/image27.jpg") },
+    ],
+  },
 ];
