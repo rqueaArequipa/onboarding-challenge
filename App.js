@@ -38,16 +38,16 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      {loading ? (
-        <Loading />
-      ) : viewedOnboarding ? (
-        <NavigationContainer >
+      <NavigationContainer>
+        {loading ? (
+          <Loading />
+        ) : viewedOnboarding ? (
           <TabNavigation />
-        </NavigationContainer>
-      ) : (
-        <Onboarding />
-      )}
-      <StatusBar style="auto" />
+        ) : (
+          <Onboarding />
+        )}
+        <StatusBar style="auto" />
+      </NavigationContainer>
     </View>
   );
 }

@@ -5,6 +5,7 @@ import Item from './Item';
 import Paginator from './Paginator';
 import NextButton from './NextButton';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Onboarding() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,6 +13,8 @@ export default function Onboarding() {
     const scrollX = useRef(new Animated.Value(0)).current;
 
     const slidesRef = useRef(null)
+
+    const navigation = useNavigation()
 
     const viewableItemsChanged = useRef(({ viewableItems }) => {
         setCurrentIndex(viewableItems[0].index);
@@ -25,6 +28,7 @@ export default function Onboarding() {
         } else {
             try {
                 await AsyncStorage.setItem('@viewedOnboarding', 'true')
+                navigation.navigate('Home')
             } catch (error) {
                 console.log('Error @setItem', error)
             }
