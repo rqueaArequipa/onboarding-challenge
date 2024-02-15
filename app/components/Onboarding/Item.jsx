@@ -1,14 +1,22 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  useWindowDimensions,
-} from "react-native";
+import { StyleSheet, Text, View, useWindowDimensions } from "react-native";
 import React from "react";
 import ImageView from "./ImageView";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Item({ item }) {
   const { width } = useWindowDimensions();
+
+  //Navigation images
+  const navigation = useNavigation();
+
+  const goDetailImage = (image=null) => {
+    navigation.navigate("Details", {
+      id: item.id ?? id == null,
+      title: item.title ?? title == null,
+      description: item.description ?? description == null,
+      image: image,
+    });
+  };
 
   return (
     <View style={[styles.container, { width }]}>
@@ -24,9 +32,8 @@ export default function Item({ item }) {
           ]}
         >
           {item.images.map(({ id, image }, index) => {
-
             return (
-              <ImageView image= {image} key={id}/>
+              <ImageView image={image} key={id} goDetailImage={goDetailImage} />
             );
           })}
         </View>

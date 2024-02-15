@@ -14,7 +14,8 @@ export default function Onboarding() {
 
     const slidesRef = useRef(null)
 
-    const navigation = useNavigation()
+    //Navigation
+    const navigation = useNavigation();
 
     const viewableItemsChanged = useRef(({ viewableItems }) => {
         setCurrentIndex(viewableItems[0].index);

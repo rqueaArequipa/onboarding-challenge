@@ -1,11 +1,12 @@
+import "react-native-gesture-handler";
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { NavigationContainer } from "@react-navigation/native";
+import StackNavigator from "./app/navigations/StackNavigator";
 
-import Onboarding from "./app/components/Onboarding/Onboarding";
-import TabNavigation from "./app/navigations/TabNavigation";
 
 const Loading = () => {
   return (
@@ -17,13 +18,14 @@ const Loading = () => {
 
 export default function App() {
   const [loading, setLoading] = useState(true);
-  const [viewedOnboarding, setViewedOnboarding] = useState(false);
+  const [viewedOnboarding, setViewedOnboarding] = useState(true);
 
   const checkOnboarding = async () => {
     try {
       const value = await AsyncStorage.getItem("@viewedOnboarding");
+      console.log(value)
       if (value != null) {
-        setViewedOnboarding(true);
+        setViewedOnboarding(false);
       }
     } catch (error) {
       console.log("Error @checkOnboarding", error);
@@ -37,24 +39,15 @@ export default function App() {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <NavigationContainer>
-        {loading ? (
-          <Loading />
-        ) : viewedOnboarding ? (
-          <TabNavigation />
-        ) : (
-          <Onboarding />
-        )}
-        <StatusBar style="auto" />
-      </NavigationContainer>
-    </View>
+    <GestureHandlerRootView style={styles.container}>
+      {loading ? <Loading /> : <StackNavigator viewedOnboarding={viewedOnboarding}/>}
+      <StatusBar style="auto" />
+    </GestureHandlerRootView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
   },
 });

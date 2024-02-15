@@ -22,9 +22,7 @@ export default function TabNavigation() {
         component={HomeScreen}
         options={{
           tabBarLabel: ({ color }) => (
-            <Text style={{ color: color, fontSize: 12 }}>
-              Home
-            </Text>
+            <Text style={{ color: color, fontSize: 12 }}>Home</Text>
           ),
 
           tabBarIcon: ({ color, size }) => (
@@ -37,9 +35,7 @@ export default function TabNavigation() {
         component={ProfileScreen}
         options={{
           tabBarLabel: ({ color }) => (
-            <Text style={{ color: color, fontSize: 12,}}>
-              Profile
-            </Text>
+            <Text style={{ color: color, fontSize: 12 }}>Profile</Text>
           ),
 
           tabBarIcon: ({ color, size }) => (

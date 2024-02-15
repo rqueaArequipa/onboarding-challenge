@@ -2,12 +2,13 @@ import {
   Image,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
   useWindowDimensions,
 } from "react-native";
 import React from "react";
 
-export default function ImageView({ image }) {
+export default function ImageView({ image, goDetailImage }) {
   const { width } = useWindowDimensions();
 
   const minWidth = width * 0.15;
@@ -15,8 +16,8 @@ export default function ImageView({ image }) {
   const minHeight = width * 0.3;
   const maxHeight = width * 0.3;
 
-  // Función para generar valores aleatorios únicos
-  const generarValoresAleatoriosUnicos = () => {
+  // Function to generate unique random values
+  const generateUniqueRandomValues = () => {
     const widthImage =
       Math.floor(Math.random() * (maxWidth - minWidth + 1)) + minWidth;
     const heightImage =
@@ -24,19 +25,21 @@ export default function ImageView({ image }) {
     return { widthImage, heightImage };
   };
 
-  const { widthImage, heightImage } = generarValoresAleatoriosUnicos();
+  const { widthImage, heightImage } = generateUniqueRandomValues();
   return (
-    <Image
-      source={image}
-      style={[
-        {
-          width: widthImage,
-          height: heightImage,
-          borderRadius: width * 0.03,
-          margin: width * 0.009,
-        },
-      ]}
-    />
+    <TouchableOpacity onPress={() => {goDetailImage(image)}}>
+      <Image
+        source={image}
+        style={[
+          {
+            width: widthImage,
+            height: heightImage,
+            borderRadius: width * 0.03,
+            margin: width * 0.009,
+          },
+        ]}
+      />
+    </TouchableOpacity>
   );
 }
 
